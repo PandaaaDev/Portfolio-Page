@@ -1,0 +1,23 @@
+@import './colors';
+// This file contains main styles for a aplication
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: var(--font-poppins);
+}
+.dark {
+	background-color: $background-color;
+	color: $main-green-color;
+}
+.light {
+	background-color: #ddd;
+	color: $secondary-blue-color;
+}
