@@ -1,0 +1,69 @@
+@import '@/app/typography';
+@keyframes burgerOpen {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(45deg);
+	}
+}
+
+@keyframes burgerClose {
+	from {
+		transform: rotate(45deg);
+	}
+	to {
+		transform: rotate(0);
+	}
+}
+
+.burgerMenu {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 24px;
+	width: 30px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	z-index: 3;
+}
+
+.burgerBar {
+	width: 100%;
+	height: 3px;
+	background-color: $main-green-color;
+	transition: all 0.3s ease-in-out;
+}
+
+/* Animation when menu is open */
+.burgerMenu.open .burgerBar:nth-of-type(1) {
+	transform: translateY(8px) rotate(-90deg);
+}
+
+.burgerMenu.open .burgerBar:nth-of-type(2) {
+	opacity: 0;
+}
+
+.burgerMenu.open .burgerBar:nth-of-type(3) {
+	transform: translateY(-12px) rotate(180deg);
+}
+
+/* Animate the burger menu button */
+.burgerMenu:focus,
+.burgerMenu:hover {
+	outline: none;
+}
+
+.burgerMenu:focus .burgerBar,
+.burgerMenu:hover .burgerBar {
+	background-color: $main-green-color;
+}
+
+.burgerMenu.open {
+	animation: burgerOpen 0.5s forwards;
+}
+
+.burgerMenu.close {
+	animation: burgerClose 0.5s forwards;
+}

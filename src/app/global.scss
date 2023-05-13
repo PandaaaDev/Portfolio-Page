@@ -1,4 +1,4 @@
-@import './colors';
+@import './typography';
 // This file contains main styles for a aplication
 *,
 *::after,
@@ -8,9 +8,11 @@
 	padding: 0;
 }
 html {
+	height: 100%;
 	font-size: 62.5%;
 }
 body {
+	height: 100%;
 	font-family: var(--font-poppins);
 }
 .dark {
