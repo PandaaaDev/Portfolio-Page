@@ -2,20 +2,20 @@
 import Link from 'next/link';
 import { useId } from 'react';
 import styles from './nav.module.scss';
-const NavList = ({ showMenu, toUpperCase }) => {
+const NavList = ({ showMenu, toUpperCase, handleOnClick }) => {
 	const navigationItems = [
 		{
 			id: useId(),
 			label: 'home',
-			link: '/',
-			newPage: true,
+			link: '#home',
+			newPage: false,
 			isActive: false,
 			dropdown: false,
 		},
 		{
 			id: useId(),
 			label: 'technology',
-			link: '/',
+			link: '#technology',
 			newPage: false,
 			isActive: false,
 			dropdown: false,
@@ -23,15 +23,15 @@ const NavList = ({ showMenu, toUpperCase }) => {
 		{
 			id: useId(),
 			label: 'projects',
-			link: '/',
+			link: '',
 			newPage: false,
 			isActive: false,
 			dropdown: false,
 		},
 		{
 			id: useId(),
-			label: 'comercial experience',
-			link: '/',
+			label: 'experience',
+			link: '',
 			newPage: false,
 			isActive: false,
 			dropdown: false,
@@ -39,7 +39,7 @@ const NavList = ({ showMenu, toUpperCase }) => {
 		{
 			id: useId(),
 			label: 'my values',
-			link: '/',
+			link: '',
 			newPage: false,
 			isActive: false,
 			dropdown: false,
@@ -47,7 +47,7 @@ const NavList = ({ showMenu, toUpperCase }) => {
 		{
 			id: useId(),
 			label: 'contact',
-			link: '/',
+			link: '',
 			newPage: false,
 			isActive: false,
 			dropdown: false,
@@ -69,13 +69,15 @@ const NavList = ({ showMenu, toUpperCase }) => {
 							<Link href={element.link}>
 								{toUpperCase
 									? element.label.toUpperCase()
-									: Array.from(element.label)[0] + element.label.substring(1)}
+									: Array.from(element.label)[0].toUpperCase() +
+									  element.label.substring(1)}
 							</Link>
 						) : (
-							<a href={element.link}>
+							<a href={element.link} onClick={handleOnClick}>
 								{toUpperCase
 									? element.label.toUpperCase()
-									: Array.from(element.label)[0] + element.label.substring(1)}
+									: Array.from(element.label)[0].toUpperCase() +
+									  element.label.substring(1)}
 							</a>
 						)}
 					</div>

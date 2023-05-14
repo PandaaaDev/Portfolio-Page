@@ -11,12 +11,22 @@ const Nav = () => {
 	const toggleMenu = useCallback(() => {
 		setShowMenu((showMenu) => !showMenu);
 	}, []);
+	const closeNav = useCallback(() => {
+		setShowMenu(false);
+	}, []);
 
 	return (
 		<nav className={styles.navbar}>
 			<Logo URL='/' text='Panda<span>Dev</span>' />
-			<BurgerMenu handleOnClick={toggleMenu} showMenu = {showMenu} />
-			<NavList showMenu={showMenu} toUpperCase={false} />
+			<div className={styles.icons}>
+				<button></button>
+				<BurgerMenu handleOnClick={toggleMenu} showMenu={showMenu} />
+			</div>
+			<NavList
+				showMenu={showMenu}
+				handleOnClick={closeNav}
+				toUpperCase={false}
+			/>
 		</nav>
 	);
 };
