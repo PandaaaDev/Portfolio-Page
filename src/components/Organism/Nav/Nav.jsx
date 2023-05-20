@@ -5,7 +5,7 @@ import styles from './nav.module.scss';
 import NavList from '@/components/Molecules/NavList';
 // import NavList from './NavList';
 import { Logo } from '@/components/Atoms/Logo/Logo';
-import BurgerButton from '@/components/Atoms/BurgerButton/BurgerButton';
+import BurgerButton from '@/components/Atoms/Buttons/BurgerButton/BurgerButton';
 
 const Nav = () => {
 	const [showMenu, setShowMenu] = useState(false);
