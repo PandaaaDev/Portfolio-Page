@@ -1,4 +1,3 @@
-import styles from '@/app/home.module.scss';
 import LandingPage from '@/components/Templates/LandingPage/LandingPage';
 import { Ubuntu_Mono } from 'next/font/google';
 

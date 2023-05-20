@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './LandingPage.module.scss';
 import Container from '@/components/Organism/Container/Container';
 import MacWindow from '@/components/Organism/MacWindow/MacWindow';
+import OverlayLink from '@/components/Atoms/Buttons/OverlayLink';
 import { Ubuntu_Mono } from 'next/font/google';
 const UbuntuMono = Ubuntu_Mono({
 	weight: '400',
@@ -9,6 +10,7 @@ const UbuntuMono = Ubuntu_Mono({
 	variable: '--font-ubuntuMono',
 	fallback: ['system-ui', 'arial'],
 });
+const links = [{ href: '#aboutme', nextLink: false, text: 'About me' }];
 const LandingPage = () => {
 	return (
 		<Container>
@@ -25,15 +27,15 @@ const LandingPage = () => {
 				</div>
 
 				<div className={styles.linkContiner}>
-					<a className={styles.link} href='#aboutme'>
+					<OverlayLink nextLink={false} href='#aboutme'>
 						About me
-					</a>
-					<a className={styles.link} href='#projects'>
+					</OverlayLink>
+					<OverlayLink nextLink={false} href='#projects'>
 						Check my work
-					</a>
-					<a className={styles.link} href='#projects'>
+					</OverlayLink>
+					<OverlayLink nextLink={false} href='#contact'>
 						Contact me!
-					</a>
+					</OverlayLink>
 				</div>
 			</MacWindow>
 		</Container>

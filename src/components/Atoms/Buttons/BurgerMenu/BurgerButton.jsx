@@ -1,5 +1,5 @@
 import styles from './BurgerMenu.module.scss';
-const BurgerMenu = ({ showMenu, handleOnClick }) => {
+const BurgerButton = ({ showMenu, handleOnClick }) => {
 	return (
 		<button
 			className={`${styles.burgerMenu} ${
@@ -14,4 +14,4 @@ const BurgerMenu = ({ showMenu, handleOnClick }) => {
 	);
 };
 
-export default BurgerMenu;
+export default BurgerButton;

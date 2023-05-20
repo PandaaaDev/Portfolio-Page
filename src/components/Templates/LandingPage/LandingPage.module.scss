@@ -20,57 +20,6 @@
 	gap: 10px;
 	flex-direction: column;
 }
-.link {
-	position: relative;
-	padding: 1rem 1.5rem;
-	border: none;
-	background-color: transparent;
-	cursor: pointer;
-	outline: none;
-	& {
-		color: $main-green-color;
-		// Effect one
-		&::after,
-		&::before {
-			content: '';
-			display: block;
-			position: absolute;
-			width: 0;
-			height: 0;
-			border: 2px solid;
-			transition: all 0.6s ease;
-			border-radius: 2px;
-			opacity: 0;
-		}
-	}
-
-	&::after {
-		bottom: 0;
-		right: 0;
-		border-top-color: transparent;
-		border-left-color: transparent;
-		border-bottom-color: $main-green-color;
-		border-right-color: $main-green-color;
-	}
-
-	&::before {
-		top: 0;
-		left: 0;
-		border-bottom-color: transparent;
-		border-right-color: transparent;
-		border-top-color: $main-green-color;
-		border-left-color: $main-green-color;
-	}
-
-	&:hover:after,
-	&:hover:before,
-	&:focus:after,
-	&:focus::before {
-		width: 105%;
-		height: 117%;
-		opacity: 1;
-	}
-}
 @media (min-width: 1024px) {
 	/* CSS styles for desktop screens */
 	.linkContiner {
