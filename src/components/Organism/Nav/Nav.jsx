@@ -3,8 +3,8 @@
 import { useState, useCallback } from 'react';
 import styles from './nav.module.scss';
 import NavList from './NavList';
-import { Logo } from '../Logo/Logo';
-import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import { Logo } from '@/components/Atoms/Logo/Logo';
+import BurgerMenu from '@/components/Atoms/BurgerMenu/BurgerMenu';
 
 const Nav = () => {
 	const [showMenu, setShowMenu] = useState(false);
@@ -19,14 +19,13 @@ const Nav = () => {
 		<nav className={styles.navbar}>
 			<Logo URL='/' text='Panda<span>Dev</span>' />
 			<div className={styles.icons}>
-				<button></button>
 				<BurgerMenu handleOnClick={toggleMenu} showMenu={showMenu} />
+				<NavList
+					showMenu={showMenu}
+					handleOnClick={closeNav}
+					toUpperCase={false}
+				/>
 			</div>
-			<NavList
-				showMenu={showMenu}
-				handleOnClick={closeNav}
-				toUpperCase={false}
-			/>
 		</nav>
 	);
 };

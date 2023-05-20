@@ -1,8 +1,7 @@
 import { Poppins, Ubuntu_Mono } from 'next/font/google';
 import './global.scss';
-import Nav from '@/components/Nav/Nav';
-import Footer from '@/components/Footer/Footer';
-import Container from '@/components/Container/Container';
+import Nav from '@/components/Organism/Nav/Nav';
+import Footer from '@/components/Organism/Footer/Footer';
 
 const poppins = Poppins({
 	subsets: ['latin'],
@@ -10,7 +9,6 @@ const poppins = Poppins({
 	variable: '--font-poppins',
 	fallback: ['system-ui', 'arial'],
 });
-
 
 export const metadata = {
 	title: 'PandaDev',
@@ -22,7 +20,7 @@ export default function RootLayout({ children }) {
 		<html lang='en'>
 			<body className={`dark ${poppins.className}`}>
 				<Nav />
-				<Container>{children}</Container>
+				<main>{children}</main>
 				<Footer />
 			</body>
 		</html>

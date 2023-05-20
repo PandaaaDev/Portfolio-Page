@@ -22,7 +22,7 @@ const NavList = ({ showMenu, toUpperCase, handleOnClick }) => {
 		},
 		{
 			id: useId(),
-			label: 'projects',
+			label: 'about me',
 			link: '',
 			newPage: false,
 			isActive: false,
@@ -38,7 +38,7 @@ const NavList = ({ showMenu, toUpperCase, handleOnClick }) => {
 		},
 		{
 			id: useId(),
-			label: 'my values',
+			label: 'projects',
 			link: '',
 			newPage: false,
 			isActive: false,
@@ -48,7 +48,7 @@ const NavList = ({ showMenu, toUpperCase, handleOnClick }) => {
 			id: useId(),
 			label: 'contact',
 			link: '',
-			newPage: false,
+			newPage: true,
 			isActive: false,
 			dropdown: false,
 		},

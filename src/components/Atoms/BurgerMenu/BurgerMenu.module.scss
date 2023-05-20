@@ -27,6 +27,10 @@
 	border: none;
 	cursor: pointer;
 	z-index: 3;
+	&:focus,
+	&:focus-visible {
+		border: 1px solid $main-green-color;
+	}
 }
 
 .burgerBar {
