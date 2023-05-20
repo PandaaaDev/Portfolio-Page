@@ -1,0 +1,29 @@
+@import '@/app/typography';
+.windowLayout {
+	position: relative;
+	background-color: $secondary-background;
+	border-radius: 30px;
+	overflow: hidden;
+	p {
+		color: $white;
+	}
+}
+.landingPage {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.linkContiner {
+	position: absolute;
+	bottom: 5%;
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
+}
+@media (min-width: 1024px) {
+	/* CSS styles for desktop screens */
+	.linkContiner {
+		flex-direction: row;
+		gap: 20px;
+	}
+}
