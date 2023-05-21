@@ -1,5 +1,5 @@
 import { Poppins, Ubuntu_Mono } from 'next/font/google';
-import './global.scss';
+import '@/styles/global.scss';
 import Nav from '@/components/Organism/Nav/Nav';
 import Footer from '@/components/Organism/Footer/Footer';
 
