@@ -1,3 +1,4 @@
+'use client';
 import { configureStore } from '@reduxjs/toolkit';
 import technologyReducer from './tehnology';
 import themeReducer from './theme';
