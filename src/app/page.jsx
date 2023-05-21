@@ -1,4 +1,5 @@
 import LandingPage from '@/components/Templates/LandingPage/LandingPage';
+import AboutMe from '@/components/Templates/AboutMe';
 import { Ubuntu_Mono } from 'next/font/google';
 
 const UbuntuMono = Ubuntu_Mono({
@@ -11,6 +12,7 @@ export default function Home() {
 	return (
 		<>
 			<LandingPage />
+			<AboutMe />
 		</>
 	);
 }

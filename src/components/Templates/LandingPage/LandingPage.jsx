@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './LandingPage.module.scss';
-import Container from '@/components/Organism/Container/Container';
+import Container from '@/components/Atoms/Container/Container';
 import MacWindow from '@/components/Organism/MacWindow/MacWindow';
 import OverlayLink from '@/components/Atoms/Buttons/OverlayLink';
 import { Ubuntu_Mono } from 'next/font/google';
