@@ -19,6 +19,7 @@ const LandingPage = () => {
 			>
 				<div className={styles.wrapper}>
 					<h1>Hello World!</h1>
+
 					<p>My Name is Eryk Juszczak</p>
 					<p>
 						I am a software engineer with specialisation in web application
