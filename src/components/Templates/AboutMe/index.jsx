@@ -1,5 +1,6 @@
 import styles from './index.module.scss';
 import Container from '@/components/Atoms/Container/Container';
+import technologyItem from '@/components/Atoms/technologyItem';
 const AboutMe = () => {
 	return (
 		<Container>
@@ -14,8 +15,10 @@ const AboutMe = () => {
 				<div id='technologies' className={styles.technologies}>
 					<div className='header'>
 						<h2>I worked with!</h2>
+						<technologyItem label='react' />
 					</div>
-					<div className='content'></div>
+					<div className='content'>
+					</div>
 				</div>
 				<div className={styles.work}>
 					<div className='header'>

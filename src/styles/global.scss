@@ -15,16 +15,12 @@ html {
 body {
 	height: 100%;
 	font-family: var(--font-poppins);
-}
-.dark {
-	background-color: $background-color;
 	color: $main-green-color;
+	background-color: $background-color;
 }
-.light {
-	background-color: $white;
-	color: $secondary-blue-color;
-}
+
 ::-webkit-scrollbar {
+	opacity: 0;
 	width: 7px;
 }
 ::-webkit-scrollbar-track {
@@ -34,6 +30,9 @@ body {
 	border-radius: 25px;
 	background-color: $background-color;
 	transition: background-color 0.8s;
+}
+::-webkit-scrollbar {
+	opacity: 1;
 }
 ::-webkit-scrollbar-thumb:hover {
 	background-color: $main-green-color;

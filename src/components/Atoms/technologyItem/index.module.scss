@@ -1,0 +1,15 @@
+@import '@/styles/typography';
+.item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: $main-padding;
+	background-color: #fff;
+}
+.header {
+	font-size: 2rem;
+}
+.content {
+	font-size: 1.8rem;
+}
