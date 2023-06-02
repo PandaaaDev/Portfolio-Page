@@ -1,9 +1,7 @@
+'use client';
 import Image from 'next/image';
 import styles from './index.module.scss';
-// Props
-// Label String
-// Action function
-// img object! With (keys) src and alt :D
+import React, { Suspense } from 'react';
 const TechnologyItem = ({ label, action, img, alt }) => {
 	return (
 		<div className={styles.item} onClick={action}>
@@ -11,7 +9,9 @@ const TechnologyItem = ({ label, action, img, alt }) => {
 				{label.charAt(0).toUpperCase() + label.slice(1)}
 			</div>
 			<div className={styles.content}>
-				<Image src={img} alt={alt} />
+				<Suspense fallback={<div>Loading...</div>}>
+					<Image src={img} alt={alt} width={50} height={50} />
+				</Suspense>
 			</div>
 		</div>
 	);
