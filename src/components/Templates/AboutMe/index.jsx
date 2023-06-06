@@ -46,9 +46,14 @@ const AboutMe = () => {
 				<div id='technologies' className={styles.technologies}>
 					<TechnologyList />
 				</div>
-				<div className={styles.work}>
+				<div id='projects' className={styles.work}>
 					<div className='header'>
 						<h2>My projects</h2>
+						<div className=''>
+							{' '}
+							Here i need add list of box of projects and after click they will
+							redirect to a page with iframe of this page :D!{' '}
+						</div>
 					</div>
 					<div className='content'></div>
 				</div>

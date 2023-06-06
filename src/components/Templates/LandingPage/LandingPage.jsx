@@ -22,7 +22,7 @@ const LandingPage = () => {
 
 					<p>My Name is Eryk Juszczak</p>
 					<p>
-						I am a software engineer with specialisation in web application
+						I am a software developer with specialisation in web application
 						development.
 					</p>
 				</div>
@@ -32,9 +32,9 @@ const LandingPage = () => {
 						About me
 					</OverlayLink>
 					<OverlayLink nextLink={false} href='#projects'>
-						Check my work
+						Check my work!
 					</OverlayLink>
-					<OverlayLink nextLink={false} href='#contact'>
+					<OverlayLink nextLink={true} href='contact'>
 						Contact me!
 					</OverlayLink>
 				</div>

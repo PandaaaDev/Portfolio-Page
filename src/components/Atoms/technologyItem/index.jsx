@@ -9,9 +9,7 @@ const TechnologyItem = ({ label, action, img, alt }) => {
 				{label.charAt(0).toUpperCase() + label.slice(1)}
 			</div>
 			<div className={styles.content}>
-				<Suspense fallback={<div>Loading...</div>}>
-					<Image src={img} alt={alt} width={50} height={50} />
-				</Suspense>
+				<Image src={img} alt={alt} width={50} height={50} />
 			</div>
 		</div>
 	);
