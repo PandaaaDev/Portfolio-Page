@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import TechnologyItem from '@/components/atoms/TechnologyItem';
+import TechnologyItem from '@/components/Atoms/technologyItem/technologyItem';
 import styles from './TechnologyList.module.scss';
 const TechnologyList = () => {
 	const items = [
