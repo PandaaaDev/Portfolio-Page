@@ -16,10 +16,39 @@
 .technologies,
 .aboutme,
 .work {
-	border: 1px solid red;
+	position: relative;
 	background-color: #333;
 	padding: $main-padding;
 	border-radius: 30px;
+	font-size: 1.5rem;
+	padding: 2rem;
+}
+.technologies::after,
+.aboutme::after,
+.work::after {
+	content: '';
+	height: 12rem;
+	width: 1px;
+	position: absolute;
+	left: -1px;
+	top: 65%;
+	transition: top, opacity;
+	transition-duration: 600ms;
+	transition-timing-function: ease;
+	background: linear-gradient(transparent, $main-green-color, transparent);
+	opacity: 0;
+}
+.technologies::after,
+.aboutme::after,
+.work::after {
+	top: 65%;
+	opacity: 0;
+}
+.technologies:hover::after,
+.aboutme:hover::after,
+.work:hover::after {
+	top: 25%;
+	opacity: 1;
 }
 .technologies {
 	grid-area: technologies;
@@ -27,10 +56,17 @@
 
 .aboutme {
 	grid-area: about-me;
+	p {
+		color: $white;
+	}
 }
 
 .work {
 	grid-area: work;
+	iframe{
+		width: 100%;
+		height: 400px;
+	}
 }
 @media (min-width: 1024px) {
 	.container {

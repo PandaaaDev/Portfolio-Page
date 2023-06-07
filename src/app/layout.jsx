@@ -2,7 +2,6 @@ import { Poppins, Ubuntu_Mono } from 'next/font/google';
 import '@/styles/global.scss';
 import Nav from '@/components/Organism/Nav/Nav';
 import Footer from '@/components/Organism/Footer/Footer';
-
 const poppins = Poppins({
 	subsets: ['latin'],
 	weight: '400', //Needs to be a string
@@ -18,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
-			<body className={`dark ${poppins.className}`}>
+			<body className={` ${poppins.className}`}>
 				<Nav />
 				<main>{children}</main>
 				<Footer />
