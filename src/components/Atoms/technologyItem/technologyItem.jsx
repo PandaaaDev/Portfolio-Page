@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from './technologyItem.modules.scss';
+import styles from './technologyItem.module.scss';
 const TechnologyItem = ({ label, action, img, alt }) => {
 	return (
 		<div className={styles.item} onClick={action}>
