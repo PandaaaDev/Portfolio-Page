@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import styles from './index.module.scss';
+import styles from './technologyItem.module.scss';
 import React, { Suspense } from 'react';
 const TechnologyItem = ({ label, action, img, alt }) => {
 	return (

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import styles from './nav.module.scss';
+import styles from './Nav.module.scss';
 import NavList from '@/components/Molecules/NavList';
 // import NavList from './NavList';
 import { Logo } from '@/components/Atoms/Logo/Logo';
