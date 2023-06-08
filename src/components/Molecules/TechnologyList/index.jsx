@@ -11,7 +11,7 @@ const TechnologyList = () => {
 	useEffect(() => {
 		const currentURL = window.location;
 		setLoading(true);
-		getItems(currentURL.href + 'api');
+		getItems(currentURL.origin + '/api/technologyItem');
 	}, []);
 	const getItems = async (url) => {
 		axios

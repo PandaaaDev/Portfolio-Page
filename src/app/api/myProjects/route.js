@@ -1,4 +1,4 @@
 import { NextResponse } from 'next/server';
 export async function GET(req) {
-	return NextResponse.json({ message: 'Hello World! ' });
+	return NextResponse.json({ message: 'Hello world from my projects!' });
 }
