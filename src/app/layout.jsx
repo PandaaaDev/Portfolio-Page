@@ -6,7 +6,7 @@ const poppins = Poppins({
 	subsets: ['latin'],
 	weight: '400', //Needs to be a string
 	variable: '--font-poppins',
-	fallback: ['system-ui', 'arial'],
+	fallback: ['monospace', 'system-ui'],
 });
 
 export const metadata = {

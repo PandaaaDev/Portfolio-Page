@@ -4,7 +4,7 @@ import axios from 'axios';
 import TechnologyItem from '@/components/Atoms/technologyItem/technologyItem';
 import styles from './TechnologyList.module.scss';
 
-const TechnologyList = () => {
+const TechnologyList = ({ handleSelectedItem }) => {
 	const [loading, setLoading] = useState(true);
 	const [items, setItems] = useState();
 
@@ -41,6 +41,9 @@ const TechnologyList = () => {
 								label={element.label}
 								img={element.img}
 								alt={element.alt}
+								onClick={() => {
+									handleSelectedItem(element.label);
+								}}
 							/>
 						);
 					})}
