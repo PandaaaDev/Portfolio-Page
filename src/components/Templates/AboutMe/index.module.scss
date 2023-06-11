@@ -67,7 +67,16 @@
 	flex-direction: column;
 	gap: 5px;
 }
-
+.item {
+	a {
+		color: white;
+		text-decoration: none;
+		transition: 0.3s color;
+		&:hover {
+			color: $main-green-color;
+		}
+	}
+}
 @media (min-width: 1024px) {
 	.container {
 		grid-template-columns: 1fr 1fr;

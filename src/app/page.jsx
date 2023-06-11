@@ -1,5 +1,5 @@
 import LandingPage from '@/components/Templates/LandingPage/LandingPage';
-import AboutMe from '@/components/Templates/AboutMe';
+import AboutMe from '@/components/Templates/AboutMe/AboutMe';
 import { Ubuntu_Mono } from 'next/font/google';
 
 const UbuntuMono = Ubuntu_Mono({
