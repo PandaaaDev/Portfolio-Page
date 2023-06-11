@@ -2,7 +2,9 @@
 import { useId } from 'react';
 import styles from './Footer.module.scss';
 import { Logo } from '@/components/Atoms/Logo/Logo';
-import NavLink from '@/components/Atoms/Buttons/NavLink/NavLink';
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 const Footer = () => {
 	const navigationItems = [
 		{
@@ -48,21 +50,29 @@ const Footer = () => {
 			<div className={`${styles.container} ${styles.logoContainer}`}>
 				<Logo URL='/' text='Panda<span>Dev</span>' />
 			</div>
-			<nav className={`${styles.container} ${styles.nav}`}>
+			<nav className={`${styles.container} ${styles.navBar}`}>
 				{navigationItems.map((element) => {
 					return (
-						<NavLink
-							href={element.link}
-							key={element.id}
-							nextLink={element.newPage}
-						>
+						<Link href={element.link} key={element.id}>
 							{element.label}
-						</NavLink>
+						</Link>
 					);
 				})}
 			</nav>
 			<div className={`${styles.container} ${styles.social}`}>
-
+				<div className={styles.iconContainer}>
+					<a href='https://github.com/PandaaaDev' target='_blank'>
+						<FontAwesomeIcon icon={faGithub} />
+					</a>
+				</div>
+				<div className={styles.iconContainer}>
+					<a
+						href='https://www.linkedin.com/in/eryk-juszczak-524b13218/'
+						target='_blank'
+					>
+						<FontAwesomeIcon icon={faLinkedin} />
+					</a>
+				</div>
 			</div>
 			<div className={`${styles.container} ${styles.copyright}`}>
 				PandaDev 2023
