@@ -1,14 +1,37 @@
 'use client';
-import { useContext, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import Container from '@/components/Atoms/Container/Container';
 import TechnologyList from '@/components/Molecules/TechnologyList';
 import Link from 'next/link';
+import axios from 'axios';
 const AboutMe = () => {
-	const [isLoading, setIsLoading] = useState(true);
+	const [loading, setLoading] = useState(true);
 	const [selectedItem, setSelectedItem] = useState(null);
+	const [projects, setProjects] = useState([]);
 	const handleSelectedItem = (item) => {
 		setSelectedItem(item);
+	};
+	useEffect(() => {
+		const currentURL = window.location;
+		setLoading(true);
+		console.log(selectedItem);
+		if (selectedItem) {
+			console.log(selectedItem, '2');
+			fetchData(currentURL.origin + `/api/myProjects?item=${selectedItem}`);
+		}
+		setLoading(false);
+	}, [selectedItem]);
+	const fetchData = async (url) => {
+		axios
+			.get(url)
+			.then((response) => {
+				console.log(response.data);
+				setProjects(response.data);
+			})
+			.catch((error) => {
+				console.error(error);
+			});
 	};
 	return (
 		<Container>
@@ -30,7 +53,21 @@ const AboutMe = () => {
 							programing i spend my free time playing video games and traning  martial arts!`}
 							</p>
 						) : (
-							<>{selectedItem}</>
+							<>
+								{projects.length < 0 ? (
+									<>There is nothing i can show you :D NDA sorry :(</>
+								) : (
+									<div>
+										{projects.map((e) => {
+											return (
+												<div key={e.id}>
+													<p>{e.label}</p>
+												</div>
+											);
+										})}
+									</div>
+								)}
+							</>
 						)}
 					</div>
 				</div>
@@ -38,7 +75,13 @@ const AboutMe = () => {
 				<div id='technologies' className={styles.technologies}>
 					<TechnologyList handleSelectedItem={handleSelectedItem} />
 				</div>
-				<div className={styles.work}>{selectedItem}</div>
+				<div className={styles.work}>
+					{!selectedItem ? (
+						<p>If you chose technology here magic will happen</p>
+					) : (
+						<></>
+					)}
+				</div>
 			</div>
 		</Container>
 	);
