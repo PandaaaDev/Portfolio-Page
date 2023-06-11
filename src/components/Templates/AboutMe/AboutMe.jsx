@@ -10,32 +10,32 @@ const AboutMe = () => {
 	const [loading, setLoading] = useState(true);
 	const [selectedTechnology, setselectedTechnology] = useState(null);
 	const [projects, setProjects] = useState([]);
-	const handleselectedTechnology = (item) => {
-		setselectedTechnology(item);
-	};
-	useEffect(() => {
-		const currentURL = window.location;
-		setLoading(true);
-		console.log(selectedTechnology);
-		if (selectedTechnology) {
-			console.log(selectedTechnology, '2');
-			fetchData(
-				currentURL.origin + `/api/myProjects?item=${selectedTechnology}`
-			);
-		}
-		setLoading(false);
-	}, [selectedTechnology]);
 	const fetchData = async (url) => {
 		axios
 			.get(url)
 			.then((response) => {
-				console.log(response.data);
 				setProjects(response.data);
 			})
 			.catch((error) => {
 			console.error(error);
 			});
 	};
+	const handleselectedTechnology = (item) => {
+		setselectedTechnology(item);
+	};
+
+	// UseEffect
+	useEffect(() => {
+		const currentURL = window.location;
+		setLoading(true);
+		if (selectedTechnology) {
+			fetchData(
+				currentURL.origin + `/api/myProjects?item=${selectedTechnology}`
+			);
+		}
+		setLoading(false);
+	}, [selectedTechnology]);
+
 	return (
 		<Container>
 			<div id='aboutme' className={styles.container}>
@@ -50,11 +50,12 @@ const AboutMe = () => {
 						></ProjectList>
 					</div>
 				</div>
-
 				<div id='technologies' className={styles.technologies}>
 					<TechnologyList handleselectedTechnology={handleselectedTechnology} />
 				</div>
-				<div className={styles.work}></div>
+				<div className={styles.work}>
+					
+				</div>
 			</div>
 		</Container>
 	);
