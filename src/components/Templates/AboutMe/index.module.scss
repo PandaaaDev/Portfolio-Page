@@ -63,9 +63,18 @@
 
 .work {
 	grid-area: work;
-	iframe{
-		width: 100%;
-		height: 400px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+.item {
+	a {
+		color: white;
+		text-decoration: none;
+		transition: 0.3s color;
+		&:hover {
+			color: $main-green-color;
+		}
 	}
 }
 @media (min-width: 1024px) {

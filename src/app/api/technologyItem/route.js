@@ -1,9 +1,6 @@
-'use client';
-import React from 'react';
-import TechnologyItem from '@/components/atoms/TechnologyItem';
-import styles from './TechnologyList.module.scss';
-const TechnologyList = () => {
-	const items = [
+import { NextResponse } from 'next/server';
+export async function GET(req) {
+	return NextResponse.json([
 		{
 			label: 'TypeScript',
 			img: 'https://cdn.worldvectorlogo.com/logos/typescript.svg',
@@ -64,27 +61,5 @@ const TechnologyList = () => {
 			img: 'https://www.electronjs.org/assets/img/logo.svg',
 			alt: 'Electron Logo',
 		},
-	];
-	// Here we need to do an api call to backend for geting the data for page :D!
-	return (
-		<>
-			<div className={styles.header}>
-				<h2>I worked with!</h2>
-			</div>
-			<div className={styles.content}>
-				{items.map((element) => {
-					return (
-						<TechnologyItem
-							key={element.label}
-							label={element.label}
-							img={element.img}
-							alt={element.alt}
-						/>
-					);
-				})}
-			</div>
-		</>
-	);
-};
-
-export default TechnologyList;
+	]);
+}

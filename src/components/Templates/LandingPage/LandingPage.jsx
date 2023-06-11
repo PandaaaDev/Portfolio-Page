@@ -1,16 +1,14 @@
-import React from 'react';
 import styles from './LandingPage.module.scss';
 import Container from '@/components/Atoms/Container/Container';
 import MacWindow from '@/components/Organism/MacWindow/MacWindow';
-import OverlayLink from '@/components/Atoms/Buttons/OverlayLink';
+import OverlayLink from '@/components/Atoms/Buttons/OverlayLink/OverlayLink';
 import { Ubuntu_Mono } from 'next/font/google';
 const UbuntuMono = Ubuntu_Mono({
 	weight: '400',
 	subsets: ['latin'],
 	variable: '--font-ubuntuMono',
-	fallback: ['system-ui', 'arial'],
+	fallback: ['monospace', 'system-ui'],
 });
-const links = [{ href: '#aboutme', nextLink: false, text: 'About me' }];
 const LandingPage = () => {
 	return (
 		<Container>

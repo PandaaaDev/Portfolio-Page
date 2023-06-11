@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useId } from 'react';
 import styles from './NavList.module.scss';
-import NavLink from '@/components/Atoms/Buttons/NavLink';
+import NavLink from '@/components/Atoms/Buttons/NavLink/NavLink';
 const NavList = ({ showMenu, toUpperCase, handleOnClick }) => {
 	// Need to redesign this
 	const navigationItems = [
