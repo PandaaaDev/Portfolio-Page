@@ -54,12 +54,12 @@ const Footer = () => {
 				{navigationItems.map((element) => {
 					return (
 						<Link href={element.link} key={element.id}>
-							{element.label}
+							{element.label.charAt(0).toUpperCase() + element.label.slice(1)}
 						</Link>
 					);
 				})}
 			</nav>
-			<div className={`${styles.container} ${styles.social}`}>
+			<div className={`${styles.container} ${styles.socialContainer}`}>
 				<div className={styles.iconContainer}>
 					<a href='https://github.com/PandaaaDev' target='_blank'>
 						<FontAwesomeIcon icon={faGithub} />
@@ -74,7 +74,7 @@ const Footer = () => {
 					</a>
 				</div>
 			</div>
-			<div className={`${styles.container} ${styles.copyright}`}>
+			<div className={`${styles.container} ${styles.copyrightContainer}`}>
 				PandaDev 2023
 			</div>
 		</footer>
