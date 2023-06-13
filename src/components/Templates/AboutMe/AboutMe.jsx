@@ -17,10 +17,10 @@ const AboutMe = () => {
 				setProjects(response.data);
 			})
 			.catch((error) => {
-			console.error(error);
+				console.error(error);
 			});
 	};
-	const handleselectedTechnology = (item) => {
+	const handleSelectedTechnology = (item) => {
 		setselectedTechnology(item);
 	};
 
@@ -51,11 +51,9 @@ const AboutMe = () => {
 					</div>
 				</div>
 				<div id='technologies' className={styles.technologies}>
-					<TechnologyList handleselectedTechnology={handleselectedTechnology} />
+					<TechnologyList handleSelectedTechnology={handleSelectedTechnology} />
 				</div>
-				<div className={styles.work}>
-					
-				</div>
+				<div className={styles.work}></div>
 			</div>
 		</Container>
 	);
