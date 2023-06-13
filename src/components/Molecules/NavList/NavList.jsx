@@ -9,9 +9,9 @@ const NavList = ({ showMenu, toUpperCase, handleOnClick }) => {
 		{
 			id: useId(),
 			label: 'home',
-			link: '#home',
+			link: '/',
 			sameOriginPage: true,
-			newPage: false,
+			newPage: true,
 			target: '_blank',
 			isActive: false,
 		},
@@ -27,18 +27,18 @@ const NavList = ({ showMenu, toUpperCase, handleOnClick }) => {
 		{
 			id: useId(),
 			label: 'experience',
-			link: '#experience',
+			link: '/experience',
 			sameOriginPage: true,
-			newPage: false,
+			newPage: true,
 			target: '_blank',
 			isActive: false,
 		},
 		{
 			id: useId(),
 			label: 'contact',
-			link: '#contact',
+			link: '/contact',
 			sameOriginPage: true,
-			newPage: false,
+			newPage: true,
 			target: '_blank',
 			isActive: false,
 		},
@@ -53,7 +53,7 @@ const NavList = ({ showMenu, toUpperCase, handleOnClick }) => {
 						handleOnClick={handleOnClick}
 						nextLink={element.newPage}
 					>
-						{element.label}
+						{element.label.charAt(0).toUpperCase() + element.label.slice(1)}
 					</NavLink>
 				);
 			})}

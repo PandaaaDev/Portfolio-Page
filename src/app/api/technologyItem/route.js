@@ -47,6 +47,16 @@ export async function GET(req) {
 			alt: 'Node.js logo',
 		},
 		{
+			label: 'Express',
+			img: 'https://cdn.worldvectorlogo.com/logos/express-109.svg',
+			alt: 'express  logo',
+		},
+		{
+			label: 'GraphQL',
+			img: 'https://cdn.worldvectorlogo.com/logos/graphql-logo-2.svg',
+			alt: 'graphql logo',
+		},
+		{
 			label: 'Postman',
 			img: 'https://cdn.worldvectorlogo.com/logos/postman.svg',
 			alt: 'Postman logo',

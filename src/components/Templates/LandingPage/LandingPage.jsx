@@ -29,7 +29,7 @@ const LandingPage = () => {
 					<OverlayLink nextLink={false} href='#aboutme'>
 						About me
 					</OverlayLink>
-					<OverlayLink nextLink={false} href='#projects'>
+					<OverlayLink nextLink={true} href='/experience'>
 						Check my work!
 					</OverlayLink>
 					<OverlayLink nextLink={true} href='contact'>

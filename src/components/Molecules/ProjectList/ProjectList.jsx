@@ -5,6 +5,7 @@ const ProjectList = ({ selectedTechnology, projectList }) => {
 		console.log(projectList.length > 0);
 		if (projectList.length > 0) {
 			return projectList.map((e) => {
+				console.log(e)
 				return (
 					<div key={e.id}>
 						<a href={``}>{e.label}</a>
