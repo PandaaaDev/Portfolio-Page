@@ -37,15 +37,11 @@ export async function GET(req) {
 			alt: 'Redux logo',
 		},
 		{
-			label: 'Sass',
-			img: 'https://cdn.worldvectorlogo.com/logos/sass-1.svg',
-			alt: 'Sass logo',
-		},
-		{
 			label: 'Node.js',
 			img: 'https://cdn.worldvectorlogo.com/logos/nodejs-1.svg',
 			alt: 'Node.js logo',
 		},
+
 		{
 			label: 'Express',
 			img: 'https://cdn.worldvectorlogo.com/logos/express-109.svg',
@@ -57,14 +53,19 @@ export async function GET(req) {
 			alt: 'graphql logo',
 		},
 		{
-			label: 'Postman',
-			img: 'https://cdn.worldvectorlogo.com/logos/postman.svg',
-			alt: 'Postman logo',
-		},
-		{
 			label: 'Webpack',
 			img: 'https://cdn.worldvectorlogo.com/logos/webpack-icon.svg',
 			alt: 'Webpack logo',
+		},
+		{
+			label: 'Styled Components',
+			img: 'https://cdn.worldvectorlogo.com/logos/styled-components-1.svg',
+			alt: 'Styled components logo',
+		},
+		{
+			label: 'Sass',
+			img: 'https://cdn.worldvectorlogo.com/logos/sass-1.svg',
+			alt: 'Sass logo',
 		},
 		{
 			label: 'electron',
