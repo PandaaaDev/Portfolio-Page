@@ -5,6 +5,7 @@ import Container from '@/components/Atoms/Container/Container';
 import TechnologyList from '@/components/Molecules/TechnologyList/TechnologyList';
 import ProjectList from '@/components/Molecules/ProjectList/ProjectList';
 import Link from 'next/link';
+import OverlayLink from '@/components/Atoms/Buttons/OverlayLink/OverlayLink'
 import axios from 'axios';
 const AboutMe = () => {
 	const [loading, setLoading] = useState(true);
@@ -58,12 +59,12 @@ const AboutMe = () => {
 										}
 									})}
 								</ul>
-								<a href={selectedProject.url}>
-									<button>Check this project live!</button>
-								</a>
-								<a href={selectedProject.repository}>
-									<button>Check this project code!</button>
-								</a>
+								<OverlayLink href={selectedProject.url}>
+									Check this project live!
+								</OverlayLink>
+								<OverlayLink href={selectedProject.repository}>
+									View code
+								</OverlayLink>
 							</>
 						) : (
 							<ProjectList
