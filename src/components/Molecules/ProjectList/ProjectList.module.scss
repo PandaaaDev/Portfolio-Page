@@ -1,0 +1,9 @@
+@import '@/styles/typography';
+.projectItem {
+	color: $main-green-color;
+	text-decoration: none;
+	transition: 0.3s color;
+	&:hover {
+		color: $white;
+	}
+}

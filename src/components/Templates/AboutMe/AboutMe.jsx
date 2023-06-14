@@ -8,8 +8,9 @@ import Link from 'next/link';
 import axios from 'axios';
 const AboutMe = () => {
 	const [loading, setLoading] = useState(true);
-	const [selectedTechnology, setselectedTechnology] = useState(null);
+	const [selectedTechnology, setSelectedTechnology] = useState(null);
 	const [projects, setProjects] = useState([]);
+	const [selectedProject, setSelectedProject] = useState(null);
 	const fetchData = async (url) => {
 		axios
 			.get(url)
@@ -21,9 +22,12 @@ const AboutMe = () => {
 			});
 	};
 	const handleSelectedTechnology = (item) => {
-		setselectedTechnology(item);
+		setSelectedTechnology(item);
+		setSelectedProject(null);
 	};
-
+	const handleSelectedProject = (item) => {
+		setSelectedProject(item);
+	};
 	// UseEffect
 	useEffect(() => {
 		const currentURL = window.location;
@@ -44,16 +48,42 @@ const AboutMe = () => {
 						<h2>Welcome to my page!</h2>
 					</div>
 					<div className='content'>
-						<ProjectList
-							selectedTechnology={selectedTechnology}
-							projectList={projects}
-						></ProjectList>
+						{selectedProject ? (
+							<>
+								<h2>{selectedProject.label}</h2>
+								<ul className='technologies'>
+									{selectedProject.technologies.map((e) => {
+										{
+											return <li>{e}</li>;
+										}
+									})}
+								</ul>
+								<a href={selectedProject.url}>
+									<button>Check this project live!</button>
+								</a>
+								<a href={selectedProject.repository}>
+									<button>Check this project code!</button>
+								</a>
+							</>
+						) : (
+							<ProjectList
+								selectedTechnology={selectedTechnology}
+								projectList={projects}
+								handleSelectProject={handleSelectedProject}
+							></ProjectList>
+						)}
 					</div>
 				</div>
 				<div id='technologies' className={styles.technologies}>
 					<TechnologyList handleSelectedTechnology={handleSelectedTechnology} />
 				</div>
-				<div className={styles.work}></div>
+				<div className={styles.work}>
+					{selectedProject ? (
+						<>{selectedProject.desc}</>
+					) : (
+						<> selectedPorject not define</>
+					)}
+				</div>
 			</div>
 		</Container>
 	);

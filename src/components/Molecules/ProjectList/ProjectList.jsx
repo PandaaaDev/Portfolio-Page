@@ -1,14 +1,24 @@
-import React from 'react';
-
-const ProjectList = ({ selectedTechnology, projectList }) => {
+import { React } from 'react';
+import styles from './ProjectList.module.scss';
+const ProjectList = ({
+	selectedTechnology,
+	projectList,
+	handleSelectProject,
+}) => {
 	if (selectedTechnology) {
-		console.log(projectList.length > 0);
 		if (projectList.length > 0) {
 			return projectList.map((e) => {
-				console.log(e)
+				console.log(e);
+				var data = e;
 				return (
-					<div key={e.id}>
-						<a href={``}>{e.label}</a>
+					<div
+						className={styles.projectItem}
+						key={e.id}
+						onClick={() => {
+							handleSelectProject(data);
+						}}
+					>
+						{e.label}
 					</div>
 				);
 			});
