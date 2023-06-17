@@ -8,8 +8,7 @@ const ProjectList = ({
 	if (selectedTechnology) {
 		if (projectList.length > 0) {
 			return projectList.map((e) => {
-				console.log(e);
-				var data = e;
+				const data = e;
 				return (
 					<div
 						className={styles.projectItem}

@@ -1,29 +1,10 @@
 'use client';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useNextApiFetch } from '@/hooks/useFetch/useFetch';
 import TechnologyItem from '@/components/Atoms/technologyItem/technologyItem';
 import styles from './TechnologyList.module.scss';
 
 const TechnologyList = ({ handleSelectedTechnology }) => {
-	const [loading, setLoading] = useState(true);
-	const [items, setItems] = useState();
-
-	useEffect(() => {
-		const currentURL = window.location;
-		setLoading(true);
-		getItems(currentURL.origin + '/api/technologyItem');
-	}, []);
-	const getItems = async (url) => {
-		axios
-			.get(url)
-			.then((res) => {
-				setLoading(false);
-				setItems(res.data);
-			})
-			.catch((error) => {
-				console.error(error);
-			});
-	};
+	const { data, loading, error } = useNextApiFetch('/api/technologyItem');
 
 	return (
 		<>
@@ -34,7 +15,7 @@ const TechnologyList = ({ handleSelectedTechnology }) => {
 				<div>Loading...</div>
 			) : (
 				<div className={styles.content}>
-					{items.map((element) => {
+					{data.map((element) => {
 						return (
 							<TechnologyItem
 								key={element.label}

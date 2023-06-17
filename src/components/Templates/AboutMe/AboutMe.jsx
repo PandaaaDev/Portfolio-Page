@@ -1,27 +1,19 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useNextApiFetch } from '@/hooks/useFetch/useFetch';
 import styles from './index.module.scss';
 import Container from '@/components/Atoms/Container/Container';
 import TechnologyList from '@/components/Molecules/TechnologyList/TechnologyList';
 import ProjectList from '@/components/Molecules/ProjectList/ProjectList';
-import Link from 'next/link';
 import OverlayLink from '@/components/Atoms/Buttons/OverlayLink/OverlayLink';
-import axios from 'axios';
 const AboutMe = () => {
-	const [loading, setLoading] = useState(true);
 	const [selectedTechnology, setSelectedTechnology] = useState(null);
-	const [projects, setProjects] = useState([]);
 	const [selectedProject, setSelectedProject] = useState(null);
-	const fetchData = async (url) => {
-		axios
-			.get(url)
-			.then((response) => {
-				setProjects(response.data);
-			})
-			.catch((error) => {
-				console.error(error);
-			});
-	};
+
+	const { data, loading, error } = useNextApiFetch(
+		`/api/myProjects?item=${selectedTechnology}`
+	);
+
 	const handleSelectedTechnology = (item) => {
 		setSelectedTechnology(item);
 		setSelectedProject(null);
@@ -29,18 +21,6 @@ const AboutMe = () => {
 	const handleSelectedProject = (item) => {
 		setSelectedProject(item);
 	};
-	// UseEffect
-	useEffect(() => {
-		const currentURL = window.location;
-		setLoading(true);
-		if (selectedTechnology) {
-			fetchData(
-				currentURL.origin + `/api/myProjects?item=${selectedTechnology}`
-			);
-		}
-		setLoading(false);
-	}, [selectedTechnology]);
-
 	return (
 		<Container>
 			<div id='aboutme' className={styles.container}>
@@ -82,7 +62,7 @@ const AboutMe = () => {
 						) : (
 							<ProjectList
 								selectedTechnology={selectedTechnology}
-								projectList={projects}
+								projectList={data}
 								handleSelectProject={handleSelectedProject}
 							></ProjectList>
 						)}
@@ -91,7 +71,7 @@ const AboutMe = () => {
 				<div id='technologies' className={styles.technologies}>
 					<TechnologyList handleSelectedTechnology={handleSelectedTechnology} />
 				</div>
-				<div className={styles.work}></div>
+				<div className={styles.work}>page preview</div>
 			</div>
 		</Container>
 	);
