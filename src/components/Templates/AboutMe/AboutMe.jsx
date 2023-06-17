@@ -5,7 +5,7 @@ import Container from '@/components/Atoms/Container/Container';
 import TechnologyList from '@/components/Molecules/TechnologyList/TechnologyList';
 import ProjectList from '@/components/Molecules/ProjectList/ProjectList';
 import Link from 'next/link';
-import OverlayLink from '@/components/Atoms/Buttons/OverlayLink/OverlayLink'
+import OverlayLink from '@/components/Atoms/Buttons/OverlayLink/OverlayLink';
 import axios from 'axios';
 const AboutMe = () => {
 	const [loading, setLoading] = useState(true);
@@ -46,25 +46,38 @@ const AboutMe = () => {
 			<div id='aboutme' className={styles.container}>
 				<div className={styles.aboutme}>
 					<div className='header'>
-						<h2>Welcome to my page!</h2>
+						{selectedProject ? (
+							<h2>{selectedProject.label}</h2>
+						) : (
+							<h2>Welcome to my page!</h2>
+						)}
 					</div>
-					<div className='content'>
+					<div className={styles.content}>
 						{selectedProject ? (
 							<>
-								<h2>{selectedProject.label}</h2>
-								<ul className='technologies'>
+								<h4>Technologies i used in this project:</h4>
+								<ul className={styles.projectTechnologies}>
 									{selectedProject.technologies.map((e) => {
 										{
-											return <li>{e}</li>;
+											return <li>{e.charAt(0).toUpperCase() + e.slice(1)}</li>;
 										}
 									})}
 								</ul>
-								<OverlayLink href={selectedProject.url}>
-									Check this project live!
-								</OverlayLink>
-								<OverlayLink href={selectedProject.repository}>
-									View code
-								</OverlayLink>
+								<div className={styles.description}>
+									<div className={styles.header}>Description:</div>
+									<div className={styles.content}>{selectedProject.desc}</div>
+								</div>
+								<div className={styles.linkContainer}>
+									<OverlayLink target='_blank' href={selectedProject.url}>
+										View page
+									</OverlayLink>
+									<OverlayLink
+										target='_blank'
+										href={selectedProject.repository}
+									>
+										View code
+									</OverlayLink>
+								</div>
 							</>
 						) : (
 							<ProjectList
@@ -78,13 +91,7 @@ const AboutMe = () => {
 				<div id='technologies' className={styles.technologies}>
 					<TechnologyList handleSelectedTechnology={handleSelectedTechnology} />
 				</div>
-				<div className={styles.work}>
-					{selectedProject ? (
-						<>{selectedProject.desc}</>
-					) : (
-						<> selectedPorject not define</>
-					)}
-				</div>
+				<div className={styles.work}></div>
 			</div>
 		</Container>
 	);
