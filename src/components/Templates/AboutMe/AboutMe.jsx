@@ -64,6 +64,7 @@ const AboutMe = () => {
 								selectedTechnology={selectedTechnology}
 								projectList={data}
 								handleSelectProject={handleSelectedProject}
+								loading={loading}
 							></ProjectList>
 						)}
 					</div>

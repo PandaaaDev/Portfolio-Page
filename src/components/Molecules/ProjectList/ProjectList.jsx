@@ -24,7 +24,7 @@ const ProjectList = ({
 		} else {
 			return <div>Sorry but there is nothing i can show you :( </div>;
 		}
-	} else
+	} else {
 		return (
 			<p>
 				{`Hi, My name is Eryk Juszczak and i am software developer with 1
@@ -37,6 +37,7 @@ in creating interactive and responsive web applications. Beside
 programing i spend my free time playing video games and traning  martial arts!`}
 			</p>
 		);
+	}
 };
 
 export default ProjectList;

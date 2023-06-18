@@ -11,6 +11,7 @@ const useNextApiFetch = (url) => {
 		axios
 			.get(url)
 			.then((res) => {
+				setLoading(true);
 				setData(res.data);
 				setLoading(false);
 			})
