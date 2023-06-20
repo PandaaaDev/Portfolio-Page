@@ -4,12 +4,9 @@ import axios from 'axios';
  * @param {string} url
  */
 const useNextApiFetch = (url) => {
-	const [data, setData] = useState(null);
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
-	const fetchData = async (url) => {
+	const fetchData = async (url, controller) => {
 		axios
-			.get(url)
+			.get(url, { signal: controller.signal })
 			.then((res) => {
 				setLoading(true);
 				setData(res.data);
@@ -21,23 +18,29 @@ const useNextApiFetch = (url) => {
 				setLoading(false);
 			});
 	};
+	// Seting up state
+	const [data, setData] = useState(null);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
+	// useEffect declaration
 	useEffect(() => {
+		const controller = new AbortController();
 		const currentUrl = window.location.origin;
-		fetchData(currentUrl + url);
+		fetchData(currentUrl + url, controller);
+		// Clenup function
+		return () => {
+			controller.abort();
+		};
 	}, [url]);
-	console.log({ data, loading, error });
 	return { data, loading, error };
 };
 /**
  * @param {string} url
  */
 const useFetch = (url) => {
-	const [data, setData] = useState(null);
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
-	const fetchData = async (url) => {
+	const fetchData = async (url, controller) => {
 		axios
-			.get(url)
+			.get(url, { signal: controller.signal })
 			.then((res) => {
 				setData(res.data);
 				setLoading(false);
@@ -48,8 +51,15 @@ const useFetch = (url) => {
 				setLoading(false);
 			});
 	};
+	const [data, setData] = useState(null);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
 	useEffect(() => {
-		fetchData(url);
+		const controller = new AbortController();
+		fetchData(url, controller);
+		return () => {
+			controller.abort();
+		};
 	}, [url]);
 
 	return { data, loading, error };

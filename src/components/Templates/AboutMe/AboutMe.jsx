@@ -39,7 +39,11 @@ const AboutMe = () => {
 								<ul className={styles.projectTechnologies}>
 									{selectedProject.technologies.map((e) => {
 										{
-											return <li>{e.charAt(0).toUpperCase() + e.slice(1)}</li>;
+											return (
+												<li key={e}>
+													{e.charAt(0).toUpperCase() + e.slice(1)}
+												</li>
+											);
 										}
 									})}
 								</ul>
