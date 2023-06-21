@@ -6,6 +6,7 @@ import Container from '@/components/Atoms/Container/Container';
 import TechnologyList from '@/components/Molecules/TechnologyList/TechnologyList';
 import ProjectList from '@/components/Molecules/ProjectList/ProjectList';
 import OverlayLink from '@/components/Atoms/Buttons/OverlayLink/OverlayLink';
+import Image from 'next/image';
 const AboutMe = () => {
 	const [selectedTechnology, setSelectedTechnology] = useState(null);
 	const [selectedProject, setSelectedProject] = useState(null);
@@ -76,7 +77,18 @@ const AboutMe = () => {
 				<div id='technologies' className={styles.technologies}>
 					<TechnologyList handleSelectedTechnology={handleSelectedTechnology} />
 				</div>
-				<div className={styles.work}>page preview</div>
+				<div className={styles.work}>
+					{selectedProject ? (
+						<iframe
+							className='frame'
+							height='100%'
+							width={'100%'}
+							src='http://localhost:3000/'
+						></iframe>
+					) : (
+						<Image alt='Some img!'></Image>
+					)}
+				</div>
 			</div>
 		</Container>
 	);

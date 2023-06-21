@@ -17,7 +17,7 @@
 .aboutme,
 .work {
 	position: relative;
-	background-color: #333;
+	background-color: $secondary-background;
 	padding: $main-padding;
 	border-radius: 30px;
 	font-size: 1.5rem;
@@ -100,6 +100,10 @@
 .linkContainer {
 	display: flex;
 	gap: 15px;
+}
+.frame {
+	border: none !important;
+	border-radius: 10px !important;
 }
 @media (min-width: 1024px) {
 	.container {
