@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from 'react';
 import styles from './Nav.module.scss';
-import NavList from '@/components/Molecules/NavList';
+import NavList from '@/components/Molecules/NavList/NavList';
 // import NavList from './NavList';
 import { Logo } from '@/components/Atoms/Logo/Logo';
 import BurgerButton from '@/components/Atoms/Buttons/BurgerButton/BurgerButton';

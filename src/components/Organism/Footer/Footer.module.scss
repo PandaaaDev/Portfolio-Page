@@ -1,0 +1,113 @@
+@import '@/styles/typography';
+.footer {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	gap: 10px;
+	padding: 0 5%;
+	border-top: 1px solid $main-green-color;
+	// border: 1px solid red;
+	max-height: 400px;
+	.copyrightContainer {
+		height: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+.linkContainer {
+	position: relative;
+}
+.logoContainer {
+	display: none;
+}
+.navBar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 10px;
+	a {
+		// display: flex;
+		// align-items: center;
+		// justify-content: center;
+		color: $main-green-color;
+		padding-left: 2%;
+		width: 50%;
+		// font-size: 2.5rem;
+		transition: 0.3s color;
+		text-decoration: none;
+		&:hover {
+			color: $white;
+		}
+	}
+}
+.socialContainer {
+	display: flex;
+	.iconContainer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 5rem;
+		width: 100%;
+		// border: 1px solid red;
+		a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			color: $main-green-color;
+			transition: 0.3s color;
+			&:hover {
+				color: $white;
+			}
+			&:focus {
+				color: $white;
+			}
+		}
+	}
+}
+@media screen and (min-width: 1024px) {
+	/* Your CSS rules for screens larger than 1080px go here */
+	.footer {
+		// border: 1px solid red;
+		display: grid;
+		grid-template-columns: 0.25fr 1fr 0.25fr;
+		grid-template-rows: 1fr 0.1fr;
+		gap: 0px 0px;
+		grid-template-areas:
+			'logo navigation social'
+			'copyright copyright copyright';
+		padding-top: 8px;
+	}
+	.logoContainer {
+		display: block;
+		grid-area: logo;
+	}
+	.navBar {
+		grid-area: navigation;
+		flex-direction: row;
+		// justify-content: flex-end;
+		// align-content: flex-end;
+		// max-width: 120px;
+		font-size: 1.4rem;
+		a {
+			max-width: 120px;
+		}
+	}
+	.socialContainer {
+		grid-area: social;
+		// flex-direction: column;
+		width: auto;
+		gap: 15px;
+		justify-content: flex-end;
+		.iconContainer {
+			width: auto;
+			font-size: 2.5rem;
+		}
+	}
+	.copyrightContainer {
+		grid-area: copyright;
+	}
+}

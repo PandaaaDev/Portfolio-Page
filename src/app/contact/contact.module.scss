@@ -1,0 +1,10 @@
+@import '@/styles/typography';
+.windowLayout {
+	position: relative;
+	background-color: $secondary-background;
+	border-radius: 30px;
+	overflow: hidden;
+	p {
+		color: $white;
+	}
+}

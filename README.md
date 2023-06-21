@@ -5,5 +5,7 @@ You can check it under this link:
 Technologies i used:
 *React
 *Next.js
-*Sass
-*Eslint
+*Axios
+*Font Awesome
+\*Sass
+\*Eslint

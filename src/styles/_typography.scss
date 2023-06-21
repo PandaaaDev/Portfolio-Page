@@ -1,2 +1,10 @@
 @import './colors';
 $main-padding: 2.5%;
+@mixin basicHoverLink {
+	color: $main-green-color;
+	transition: 0.3s color;
+    cursor: pointer;
+	&:hover {
+		color: $white;
+	}
+}

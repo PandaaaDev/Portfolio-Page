@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import styles from './technologyItem.module.scss';
-const TechnologyItem = ({ label, action, img, alt }) => {
+const TechnologyItem = (props) => {
 	return (
-		<div className={styles.item} onClick={action}>
+		<div className={styles.item} {...props}>
 			<div className={styles.header}>
-				{label.charAt(0).toUpperCase() + label.slice(1)}
+				{props.label.charAt(0).toUpperCase() + props.label.slice(1)}
 			</div>
 			<div className={styles.content}>
-				<Image src={img} alt={alt} width={50} height={50} />
+				<Image src={props.img} alt={props.alt} width={50} height={50} />
 			</div>
 		</div>
 	);

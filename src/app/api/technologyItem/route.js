@@ -1,9 +1,6 @@
-'use client';
-import React from 'react';
-import TechnologyItem from '@/components/Atoms/technologyItem/technologyItem';
-import styles from './TechnologyList.module.scss';
-const TechnologyList = () => {
-	const items = [
+import { NextResponse } from 'next/server';
+export async function GET(req) {
+	return NextResponse.json([
 		{
 			label: 'TypeScript',
 			img: 'https://cdn.worldvectorlogo.com/logos/typescript.svg',
@@ -40,19 +37,20 @@ const TechnologyList = () => {
 			alt: 'Redux logo',
 		},
 		{
-			label: 'Sass',
-			img: 'https://cdn.worldvectorlogo.com/logos/sass-1.svg',
-			alt: 'Sass logo',
-		},
-		{
 			label: 'Node.js',
 			img: 'https://cdn.worldvectorlogo.com/logos/nodejs-1.svg',
 			alt: 'Node.js logo',
 		},
+
 		{
-			label: 'Postman',
-			img: 'https://cdn.worldvectorlogo.com/logos/postman.svg',
-			alt: 'Postman logo',
+			label: 'Express',
+			img: 'https://cdn.worldvectorlogo.com/logos/express-109.svg',
+			alt: 'express  logo',
+		},
+		{
+			label: 'GraphQL',
+			img: 'https://cdn.worldvectorlogo.com/logos/graphql-logo-2.svg',
+			alt: 'graphql logo',
 		},
 		{
 			label: 'Webpack',
@@ -60,31 +58,19 @@ const TechnologyList = () => {
 			alt: 'Webpack logo',
 		},
 		{
+			label: 'Styled Components',
+			img: 'https://cdn.worldvectorlogo.com/logos/styled-components-1.svg',
+			alt: 'Styled components logo',
+		},
+		{
+			label: 'Sass',
+			img: 'https://cdn.worldvectorlogo.com/logos/sass-1.svg',
+			alt: 'Sass logo',
+		},
+		{
 			label: 'electron',
 			img: 'https://www.electronjs.org/assets/img/logo.svg',
 			alt: 'Electron Logo',
 		},
-	];
-	// Here we need to do an api call to backend for geting the data for page :D!
-	return (
-		<>
-			<div className={styles.header}>
-				<h2>I worked with!</h2>
-			</div>
-			<div className={styles.content}>
-				{items.map((element) => {
-					return (
-						<TechnologyItem
-							key={element.label}
-							label={element.label}
-							img={element.img}
-							alt={element.alt}
-						/>
-					);
-				})}
-			</div>
-		</>
-	);
-};
-
-export default TechnologyList;
+	]);
+}
