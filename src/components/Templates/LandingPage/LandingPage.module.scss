@@ -18,12 +18,10 @@
 	bottom: 5%;
 	display: flex;
 	gap: 10px;
-	flex-direction: column;
 }
 @media (min-width: 1024px) {
 	/* CSS styles for desktop screens */
 	.linkContiner {
-		flex-direction: row;
 		gap: 20px;
 	}
 }

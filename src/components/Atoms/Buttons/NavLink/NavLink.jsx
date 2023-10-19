@@ -10,7 +10,7 @@ const NavLink = ({
 	return (
 		<div className={styles.link}>
 			{nextLink ? (
-				<Link href={href} target={target}>
+				<Link href={href} target={target} onClick={handleOnClick}>
 					{children}
 				</Link>
 			) : (

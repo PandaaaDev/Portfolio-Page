@@ -26,13 +26,10 @@ const LandingPage = () => {
 				</div>
 
 				<div className={styles.linkContiner}>
-					<OverlayLink nextLink={false} href='#aboutme'>
+					<OverlayLink nextLink={true} href='/aboutme'>
 						About me
 					</OverlayLink>
-					<OverlayLink nextLink={true} href='/experience'>
-						Check my work!
-					</OverlayLink>
-					<OverlayLink nextLink={true} href='contact'>
+					<OverlayLink nextLink={true} href='/contact'>
 						Contact me!
 					</OverlayLink>
 				</div>
